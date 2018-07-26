@@ -3,8 +3,27 @@
 	<head>
     		<title>demo</title>
 		<meta charset="utf-8">
+		<script type="text/javascript" src="https://absample.baidu.com/static/sampling-param-1.0.js"></script>
 	</head>
 	<body>
+		<script>
+		    if (window.bdABTest) {
+			// 当前预览环境支持抽样
+			bdABTest.sampling({
+			    sample: 0.9, // 命中抽样的概率，需要用户修改
+			    groupNum:2,  // 实验组和对照组的个数总和，需要用户修改
+			    endTime:1532171216000, // 实验的结束时间，需要用户修改
+			    success: function (rs) {
+				// 以下为用户配置代码
+				// 返回格式如下：
+				// 例如：{"176":"C1"}，其中key为实验编号，value表示实验组/对照组，其中C1表示对照组第一个，T1表示实验组第一个，以此类推
+				// 用户需要根据返回的数据配置页面显示实验组还是对照组
+			    }
+			});
+		    } else {
+			// 当前浏览环境不支持抽样
+		    }
+		</script>
     		<div>1233</div>
 	</body>
 </html>
