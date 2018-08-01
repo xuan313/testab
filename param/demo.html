@@ -25,7 +25,6 @@
 	<body>
 		<!--sampling param start-->
 		<script>
-		    console.log(window.bdAbTest);
 		    if (window.bdABTest) {
 			// 当前预览环境支持抽样
 			bdABTest.sampling({
@@ -37,10 +36,13 @@
 				// 返回格式如下：
 				// 例如：{"176":"C1"}，其中key为实验编号，value表示实验组/对照组，其中C1表示对照组第一个，T1表示实验组第一个，以此类推
 				// 用户需要根据返回的数据配置页面显示实验组还是对照组
+				console.log(rs);
 			    }
 			});
 		    } else {
 			// 当前浏览环境不支持抽样
+			console.log("no sampling");
+			$('#original').show();
 		    }
 		</script>
 		<!--sampling param end-->	
