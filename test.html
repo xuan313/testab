@@ -25,8 +25,8 @@
 			ga('send', 'pageview');
 		</script>-->
 		<script>
-			var bdTestAUrl = "https://xuan313.github.io/testab/test1.html";
-			var bdTestBUrl = "https://xuan313.github.io/testab/test2.html";
+			var bdTestAUrl = "a.html";
+			var bdTestBUrl = "b.html";
 			window.bdABTestConfig = {
 			    sample: 0.9,
 			    cGroup: [bdTestAUrl],
@@ -41,7 +41,7 @@
 			    var cGroups = window.bdABTestConfig.cGroup;
 			    var tGroups = window.bdABTestConfig.tGroup;
 			    if(!cGroups.in_array(refer)&& !tGroups.in_array(refer)) {
-				document.write("<script src=https://absample.baidu.com/static/sampling-2.0.js><\/script>");
+				document.write("<script chartset='utf-8' src='https://absample.baidu.com/static/sampling-2.0.js'><\/script>");
 			    }
 			})();
 		</script>
