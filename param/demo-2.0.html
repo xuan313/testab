@@ -35,11 +35,27 @@
 				// 以下为用户配置代码
 				// 返回格式如下：
 				// 例如：{"176":"C1"}，其中key为实验编号，value表示实验组/对照组，其中C1表示对照组第一个，T1表示实验组第一个，以此类推
-				// 用户需要根据返回的数据配置页面显示实验组还是对照组				
-			    }
+				// 用户需要根据返回的数据配置页面显示实验组还是对照组	
+				if (rs) {
+					$.each(rs, function (key, item) {
+						if (item == 'T1') {
+							// 实验组1
+							$('#test').show();
+						} else if (item == 'C1') {
+							// 对照组1
+							$('#control').show();
+						} else {
+							$('#original').show();
+						}
+					});
+				} else {
+					// 没有返回
+			    	}
 			});
 		    } else {
 			// 当前浏览环境不支持抽样
+			console.log("no sampling");
+			$('#original').show();
 		    }
 		</script>
 		<!--sampling param end-->	
@@ -81,6 +97,17 @@
 				<p class="lead">This is a Demo for sampling-param!</p>
 			      </main>
 			</div>
-		</div>	
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"></script>
+		<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				var winHeight = window.screen.height;
+				$('#control').height(winHeight);
+				$('#test').height(winHeight);
+				$('#original').height(winHeight);
+			});
+		</script>
 	</body>
 </html>
