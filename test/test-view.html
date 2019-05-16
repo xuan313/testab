@@ -1,0 +1,67 @@
+
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>tool</title>
+        <!--可视化安装模式JS，必须配置为head标签内的第一个script标签-->
+        <script type="text/javascript" src="https://absample.baidu.com/static/optimal/bd-optimal.js"></script>
+    </head>
+    <body>
+        <h1 style="text-decoration: overline">测试页面</h1>
+        <div>
+            123
+            <button type="button" style="background: #f5f5f6; position: absolute; left: 20px;">测试</button>
+        </div>
+        <div>
+            <img src="http://ab.baidu.com/src/img/common/logo@2x.png">
+        </div>
+        <div>
+            <p>
+                234
+                <br>
+                456
+            </p>
+            我是div
+            <p>123<u>"我是一个u"</u>456<i>我是一个i</i></p>
+            <p><u>hah</u>123456<i>我是一个i</i></p>
+            <p><u>hah</u><u>lam</u>123456<i>我是一个i</i></p>
+            <p><u>hah</u><u>lam</u>123456<i>我是一个i</i><b>ll</b></p>
+            <p>
+                123
+                <a>123</a>
+                123
+            </p>
+            <p>123<u>123</u>123<i>123</i></p>
+            <p><u>hah</u>hah<i>hah</i></p>
+            <p><u>hah</u><u>lam</u>123456<i>我是一个i</i></p>
+            <p><u>hah</u><u>lam</u>123456<i>我是一个i</i><b>ll</b></p>
+        </div>
+        <div>
+            <a href="javaScript:;">测试一个连接</a>
+        </div>
+        <article>我是h5的标签</article>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+            <polygon points="100,10 40,180 190,60 10,60 160,180"
+                style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"></polygon>
+        </svg>
+        <script>
+            (function () {
+                console.log('23');
+                var btn = document.getElementsByTagName('button')[0];
+                btn.addEventListener('click', function (evt) {
+                    alert('ll');
+                });
+            })();
+            $(document).ready(function () {
+                var a = $('a');
+                a.on('click', function () {
+                    alert('123');
+                });
+                $(document).on('click', 'a', function () {
+                    alert('lla');
+                });
+            });
+        </script>
+    </body>
+</html>
