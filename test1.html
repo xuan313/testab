@@ -1,25 +1,19 @@
 <!Doctype html>
 <html>
 	<head>
-		<meta charset="utf-8">		
-		<!-- GrowingIO Analytics code version 2.1 -->
-		<!-- Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com -->
-
-		<script type='text/javascript'>
-		!function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.growingio.com/2.1/gio.js","gio");
-		  gio('init','b0ef94d1eba5e4f0', {});
-
-		//custom page code begin here
-
-		//custom page code end here
-
-		gio('send');
-
-		</script>
-
-		<!-- End GrowingIO Analytics code version: 2.1 -->
+		<meta charset="utf-8">
+		<script src="https://mirror.testin.cn/testin-ab-v4.2.2.js"></script>
+		
 	</head>
 	<body>
-		<h3 style="color:pink">HELLO AB!</h3>
+		<h3 style="color:pink" id="btn">HELLO AB!</h3>
+		<script>
+			var appKey = 'TESTIN_h7e3d4119-dd62-4603-8cfb-677ff1788bd7';
+			testinAB.init(appKey);
+			var btn = document.getElementById('btn');
+			btn.addEventListener('click', function () {
+				testinAB.track('click_btn_ab', 1);
+			});
+		</script>
 	</body>
 </html>
