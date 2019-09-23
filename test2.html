@@ -5,7 +5,14 @@
 		<script src="https://mirror.testin.cn/testin-ab-v4.2.2.js"></script>
 	</head>
 	<body>
-		<h3 style="color:yellow;">HELLO AB!</h3>
-		
+		<h3 style="color:yellow;" id="btn">HELLO AB!</h3>
+		<script>
+			var appKey = 'TESTIN_h7e3d4119-dd62-4603-8cfb-677ff1788bd7';
+			testinAB.init(appKey);
+			var btn = document.getElementById('btn');
+			btn.addEventListener('click', function () {
+				testinAB.track('click_btn_ab', 1);
+			});
+		</script>
 	</body>
 </html>
